@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./styles/mixins" as *;
+@use "./styles/responsive" as *;
+
+:root {
+  --color-accent: #8184af;
+  --color-dark: #525369;
+  --color-white: #ffffff;
+  --color-border-primary: rgba(129, 132, 175, 0.15);
+  --color-border-secondary: rgba(129, 132, 175, 0.3);
+  --color-border-line: #d9dae7;
+  --color-bg-rectangle: rgba(129, 132, 175, 0.2);
+  --color-text-rectangle: rgba(82, 83, 105, 0.5);
+  --color-box-shadow: rgba(129, 132, 175, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  // overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  //   font-family:"Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  //     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  //     sans-serif;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  color: var(--color-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  @include xxs {
+    max-width: 375px;
+  }
+
+  @include xs {
+    max-width: 480px;
+  }
+
+  @include sm {
+    max-width: 768px;
+    padding: 0 20px;
+  }
+
+  @include md {
+    max-width: 1024px;
+  }
+
+  @include lg {
+    max-width: 1280px;
+  }
+
+    @include xl {
+    max-width: 1500px;
+  }
+
+}
