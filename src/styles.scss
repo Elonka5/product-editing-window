@@ -11,6 +11,7 @@
   --color-bg-rectangle: rgba(129, 132, 175, 0.2);
   --color-text-rectangle: rgba(82, 83, 105, 0.5);
   --color-box-shadow: rgba(129, 132, 175, 0.25);
+  --color-bg-modal:rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -78,6 +79,21 @@ button {
   cursor: pointer;
 }
 
+.main{
+  @include flex;
+  height: 100vh;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color:var(--color-bg-modal); 
+}
+
 .container {
   width: 100%;
   max-width: 320px;
@@ -103,6 +119,7 @@ button {
 
   @include lg {
     max-width: 1280px;
+    padding: 0 30px;
   }
 
     @include xl {

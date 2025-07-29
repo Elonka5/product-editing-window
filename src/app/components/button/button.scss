@@ -1,0 +1,47 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/responsive" as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 10px;
+
+  @include transition-standart;
+  @include md {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+
+    @include md {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &.primary {
+    padding: 3.3px 10px;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-dark);
+    }
+
+    @include md {
+      padding: 8px 12px;
+    }
+  }
+
+  &.secondary {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+}

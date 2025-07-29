@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  imports: [],
+    standalone: true,
+
+  imports: [CommonModule],
   templateUrl: './button.html',
-  styleUrl: './button.scss'
+  styleUrl: './button.scss',
 })
 export class Button {
-
+  @Input() variant: 'primary' | 'secondary' = 'primary';
+  @Input() label: string = '';
+  @Input() icon?: string;
 }

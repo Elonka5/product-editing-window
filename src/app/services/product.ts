@@ -10,7 +10,10 @@ export class Product {
   private productData = new BehaviorSubject<IProduct | null>(null);
   product$ = this.productData.asObservable();
 
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) {
+    this.loadProduct();
+  }
 
   loadProduct() {
     this.http.get<IProduct>('assets/data/product.json')

@@ -11,3 +11,10 @@
   gap: $gap;
 }
 
+@mixin grid($columns: repeat(2, 1fr), $gap: 16px, $place: initial) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
+  place-items: $place;
+}
+

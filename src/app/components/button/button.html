@@ -1,4 +1,11 @@
-<p>button works!</p>
+<!-- <p>button works!</p> -->
+
+<button class="btn" [ngClass]="variant">
+  <ng-container *ngIf="icon">
+    <img [src]="icon" alt="icon" class="btn__icon" />
+  </ng-container>
+  <span class="btn__label">{{ label }}</span>
+</button>
 
 <!-- <img 
   src="assets/icons/icon.png" 

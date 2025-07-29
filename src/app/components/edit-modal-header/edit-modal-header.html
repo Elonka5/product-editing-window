@@ -1,1 +1,26 @@
-<p>edit-modal-header works!</p>
+<header class="modal__header">
+  <div class="modal__container">
+    <div class="modal-header__top">
+      <h2 class="modal-header__title">{{ product?.id }}</h2>
+      <app-button
+        label="Edit"
+        type="primary"
+        icon="assets/icons/note-edit.png"
+      ></app-button>
+    </div>
+    <div class="modal-header__controls">
+      <button class="modal-header__control-btn">
+        <img src="assets/icons/arrow-prev.png" alt="Previous" />
+      </button>
+      <button class="modal-header__control-btn">
+        <img src="assets/icons/arrow-next.png" alt="Next" />
+      </button>
+      <button class="modal-header__control-btn">
+        <img src="assets/icons/maximize.png" alt="Maximize" />
+      </button>
+      <button (click)="onCloseClick()" class="modal-header__control-btn">
+        <img src="assets/icons/close.png" alt="Close" />
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,11 +1,13 @@
-
-
 <main class="main">
-  <div class="container">
- <app-edit-modal></app-edit-modal>
-  </div>
+  <app-button
+    *ngIf="!isShowModal"
+    (click)="openModal()"
+    label="Open"
+    type="primary"
+  ></app-button>
+  <!-- <div *ngIf="isShowModal" class="modal-overlay"> -->
+    <app-edit-modal *ngIf="isShowModal" (close)="closeModal()"></app-edit-modal>
+  <!-- </div> -->
 </main>
-
-
 
 <router-outlet />
