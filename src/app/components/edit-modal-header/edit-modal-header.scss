@@ -9,9 +9,6 @@
 
 .modal__container {
   @include flex($justify: space-between);
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .modal-header__top {

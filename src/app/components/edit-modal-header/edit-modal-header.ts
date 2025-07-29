@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-edit-modal-header',
+  standalone:true,
   imports: [CommonModule, Button],
   templateUrl: './edit-modal-header.html',
   styleUrl: './edit-modal-header.scss',

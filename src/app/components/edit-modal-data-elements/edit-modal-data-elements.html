@@ -1,1 +1,145 @@
-<p>edit-modal-data-elements works!</p>
+<section class="product-info">
+  <div class="container">
+  <div class="product-info__container">
+    <div class="product-info__details">
+      <div class="product-info__item product-info__item--p20">
+        <p class="product-info__label">Brand</p>
+        <div class="product-info__value-wrapper">
+          <p class="product-info__value">{{ product?.brand }}</p>
+          <button class="product-info__button">
+            <img src="assets/icons/more.png" alt="Previous" />
+          </button>
+        </div>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Model/Series</p>
+        <p class="product-info__value">{{ product?.model_series}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Devise P/N</p>
+        <p class="product-info__value">{{ product?.device_pn}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Dev. Type</p>
+        <p class="product-info__value">{{ product?.dev_type}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label" >RNK</p>
+        <p class="product-info__value">{{ product?.rnk}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Min price</p>
+        <p class="product-info__value">{{ product?.min_price}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Max price</p>
+        <p class="product-info__value">{{ product?.max_price}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Quantity</p>
+        <p class="product-info__value">{{ product?.quantity}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">ePrq</p>
+        <p class="product-info__value">{{ product?.ePrq}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">eA4q</p>
+        <p class="product-info__value">{{ product?.eA4q}}</p>
+      </div>
+      <div class="product-info__item product-info__item--p20">
+        <p class="product-info__label">Photo_device</p>
+        <div class="product-info__value-wrapper">
+         <p class="product-info__value product-info__value--link">{{ product?.photo_device}}</p>
+          <button class="product-info__button">
+            <img src="assets/icons/link.png" alt="Previous" />
+          </button>
+        </div>
+      </div>
+    </div>
+        <div class="product-info__details">
+      <div class="product-info__item product-info__item--p20">
+        <p class="product-info__label">Sku</p>
+        <div class="product-info__value-wrapper">
+          <p class="product-info__value">{{ product?.sku }}</p>
+          <button class="product-info__button">
+            <img src="assets/icons/more.png" alt="Previous" />
+          </button>
+        </div>
+      </div>
+      <div class="product-info__item product-info__item--p20">
+        <p class="product-info__label">L-User</p>
+       <div class="product-info__value-wrapper">
+          <p class="product-info__value">{{ product?.l_user }}</p>
+          <button class="product-info__button">
+            <img src="assets/icons/more.png" alt="Previous" />
+          </button>
+        </div>
+      </div>
+      <div class="product-info__item product-info__item--p20">
+        <p class="product-info__label">Category</p>
+        <div class="product-info__value-wrapper">
+          <p class="product-info__value">{{ product?.category }}</p>
+          <button class="product-info__button">
+            <img src="assets/icons/more.png" alt="Previous" />
+          </button>
+        </div>
+      </div>
+      <div class="product-info__item product-info__item--p20">
+        <p class="product-info__label">E-User</p>
+        <div class="product-info__value-wrapper">
+          <p class="product-info__value">{{ product?.e_user }}</p>
+          <button class="product-info__button">
+            <img src="assets/icons/more.png" alt="Previous" />
+          </button>
+        </div>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Green_id</p>
+          <p class="product-info__value">{{ product?.green_id }}</p>  
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Edit_at</p>
+        <p class="product-info__value">{{ product?.edit_at}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Create_at</p>
+        <p class="product-info__value">{{ product?.create_at}}</p>
+      </div>
+      <div class="product-info__item product-info__item--p20">
+        <p class="product-info__label">Amazon listing src</p>
+       <div class="product-info__value-wrapper">
+          <p class="product-info__value product-info__value--link">{{ product?.amazon_listing_src }}</p>
+          <button class="product-info__button">
+            <img src="assets/icons/link.png" alt="Previous" />
+          </button>
+        </div>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">eLCCq</p>
+        <p class="product-info__value">{{ product?.elCcq}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Amazq</p>
+        <p class="product-info__value">{{ product?.amazq}}</p>
+      </div>
+      <div class="product-info__item">
+        <p class="product-info__label">Notes</p>
+         <p class="product-info__value">{{ product?.notes}}</p>
+      </div>
+    </div>
+    <div class="product-info__gallery">
+        <div class="product-info__image-wrapper">
+            <p class="product-info__image-caption">Photo_device</p>
+             <img class="product-info__image" src="assets/images/first-img@1x.png"
+             srcset="assets/images/first-img@1x.png 1x, assets/images/first-img@2x.png 2x"
+              alt="Photo-device" />
+        </div>
+        <div class="product-info__image-wrapper">
+            <p class="product-info__image-caption">Photo_data_plate</p>
+            <img class="product-info__image" src="assets/images/second-img@1x.png"
+            srcset="assets/images/second-img@1x.png 1x, assets/images/second-img@2x.png 2x" alt="Photo_data_plate" />
+        </div>
+    </div>
+  </div></div>
+</section>
