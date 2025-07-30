@@ -22,12 +22,7 @@
 }
 
 .modal-header__title {
-  font-size: 14px;
-  font-weight: 700;
-
-  @include md {
-    font-size: 25px;
-  }
+  @include heading-common
 }
 
 .modal-header__controls {
