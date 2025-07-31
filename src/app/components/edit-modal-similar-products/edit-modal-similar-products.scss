@@ -25,6 +25,16 @@
   }
   .product-table__buttons {
     @include flex($justify: flex-end, $gap: 15px);
+        padding: 0 10px;
+
+      @include sm {
+    padding: 0 20px;
+  }
+
+    @include lg {
+    padding: 0 30px;
+
+  }
   }
 
   .product-table__table {

@@ -9,6 +9,15 @@
   &__title-wrapper {
     @include flex($justify: flex-start, $gap: 15px);
     margin-bottom: 15px;
+    padding: 0 10px;
+
+    @include sm {
+      padding: 0 20px;
+    }
+
+    @include lg {
+      padding: 0 30px;
+    }
   }
 
   &__title {
