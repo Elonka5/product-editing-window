@@ -1,1 +1,52 @@
-<p>edit-modal-similar-products works!</p>
+ <section class="product-table product-table--variant-3">
+  <div class="container">
+    <div class="product-table__title-wrapper">
+      <h2 class="product-table__title">same products</h2>
+      <span class="product-table__count">1</span>
+    </div>
+  </div>
+  <table class="product-table__table">
+    <thead class="product-table__head">
+      <tr class="product-table__row">
+        <th class="product-table__header-cell" *ngFor="let col of columns">
+          {{ col.label }}
+        </th>
+      </tr>
+    </thead>
+    <tbody class="product-table__body">
+            <tr *ngFor="let row of product?.same_products" class="product-table__row">
+        <td
+          *ngFor="let col of columns; let i = index"
+          class="product-table__cell"
+          [attr.data-label]="col.label"
+        >
+          <ng-container *ngIf="i === columns.length - 1; else plainText">
+            <span class="cell-content">
+              {{ row[col.key] }}
+              <img
+                src="assets/icons/more.png"
+                alt="more"
+                class="product-table__icon"
+              />
+            </span>
+          </ng-container>
+          <ng-template #plainText>
+            {{ row[col.key] }}
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container">
+    <div class="product-table__buttons">
+    <app-button
+        label="Expand"
+        variant="secondary"
+      ></app-button>
+      <app-button
+        label="Add"
+        variant="primary--wide"      
+      ></app-button>
+  </div></div>
+</section>
+

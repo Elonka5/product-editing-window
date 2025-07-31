@@ -1,0 +1,43 @@
+@use "../../../styles/common-tables" as *;
+@use "../../../styles/responsive" as *;
+@use "../../../styles/mixins" as *;
+
+.product-table--variant-3 {
+  .product-table__header-cell:first-child,
+  .product-table__cell:first-child {
+    @include lg {
+      min-width: 170px;
+    }
+  }
+
+  .product-table__header-cell:nth-child(2),
+  .product-table__cell:nth-child(2) {
+    @include lg {
+      min-width: 140px;
+    }
+  }
+
+  .product-table__header-cell:nth-child(3),
+  .product-table__cell:nth-child(3) {
+    @include lg {
+      min-width: 173px;
+    }
+  }
+
+  
+  .product-table__header-cell:last-child,
+  .product-table__cell:last-child {
+    @include lg {
+      width: 100%;
+    //    min-width: 400px;
+    //   max-width: 402px;
+    }
+  }
+  .product-table__buttons{
+   @include flex($justify:flex-end, $gap:15px)
+  }
+
+  .product-table__table{
+    margin-bottom: 15px;
+  }
+}

@@ -20,7 +20,7 @@
           *ngFor="let col of columns; let i = index"
           class="product-table__cell"
           [attr.data-label]="col.label"
-        >{{ row[col.key] }}
+        >{{ i === 4 && row[col.key] ? (row[col.key] | mobileTrancate: 19) : row[col.key] }}
         </td>
       </tr>
     </tbody>

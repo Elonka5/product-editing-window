@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { IEbayListing, IProduct, IProductLocation } from '../../models/product.model';
+import { MobileTrancatePipe } from '../../pipes/mobile-trancate-pipe';
 
 @Component({
   selector: 'app-edit-modal-ebay-listings',
   standalone:true,
-  imports: [CommonModule],
+  imports: [CommonModule, MobileTrancatePipe],
   templateUrl: './edit-modal-ebay-listings.html',
   styleUrl: './edit-modal-ebay-listings.scss'
 })
