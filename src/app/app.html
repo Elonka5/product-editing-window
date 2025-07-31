@@ -5,9 +5,6 @@
     label="Open Modal"
     variant="primary--wide"
   ></app-button>
-  <!-- <div *ngIf="isShowModal" class="modal-overlay"> -->
-    <app-edit-modal *ngIf="isShowModal" (close)="closeModal()"></app-edit-modal>
-  <!-- </div> -->
+  <app-edit-modal *ngIf="isShowModal" (close)="closeModal()"></app-edit-modal>
 </main>
-
 <router-outlet />

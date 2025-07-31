@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MobileTrancatePipe implements PipeTransform {
   transform(value: string | number, limit: number): string {
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1280;
     const str = String(value);
     
     if (!isMobile) {

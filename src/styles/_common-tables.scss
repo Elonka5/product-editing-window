@@ -35,7 +35,6 @@
 
   &__table {
     width: 100%;
-    // max-width: 1500px;
     border-collapse: collapse;
     padding: 0 10px;
     white-space: nowrap;
@@ -52,9 +51,19 @@
   &__head {
     display: none;
     font-weight: normal;
-    @include sm {
-      font-size: 22px;
+    font-size: 10px;
+
+    @include md {
+      font-size: 12px;
       font-weight: 700;
+    }
+
+    @include lg {
+      font-size: 16px;
+    }
+
+    @include xl {
+      font-size: 22px;
     }
   }
 
@@ -79,13 +88,6 @@
     }
   }
 
-  &__head {
-    @include sm {
-      font-size: 22px;
-      font-weight: 700;
-    }
-  }
-
   &__row {
     margin-bottom: 14px;
     padding: 10px;
@@ -106,16 +108,29 @@
 
     &:last-child {
       border-right: none;
-      min-width: 400px;
-      max-width: 402px;
-      //   width: 100%;
+      min-width: 100px;
+      max-width: 102px;
+
+      @include md {
+        min-width: 220px;
+        max-width: 222px;
+      }
+
+      @include lg {
+        min-width: 400px;
+        max-width: 402px;
+      }
     }
   }
 
   &__header-cell,
   &__cell {
-    padding: 11px 20px;
+    padding: 11px 11px;
     text-align: left;
+
+    @include md {
+      padding: 11px 20px;
+    }
   }
 
   &__header-cell:first-child,
@@ -132,7 +147,7 @@
 
   &__header-cell:nth-child(2),
   &__cell:nth-child(2) {
-    @include lg {
+    @include xl {
       min-width: 163px;
     }
   }
@@ -143,7 +158,7 @@
   &__cell:nth-child(3),
   &__cell:nth-child(4),
   &__cell:nth-child(6) {
-    @include lg {
+    @include xl {
       min-width: 172px;
     }
   }
@@ -182,7 +197,19 @@
 
     @include sm {
       position: static;
+      padding-left: 12px;
+    }
+
+    @include md {
+      font-size: 12px;
       padding-left: 20px;
+    }
+
+    @include lg {
+      font-size: 16px;
+    }
+
+    @include xl {
       font-size: 20px;
     }
 
@@ -194,14 +221,14 @@
       top: 10.9px;
       font-size: 12px;
       font-weight: bold;
-      
+
       white-space: nowrap;
 
       @include sm {
         content: none;
         position: static;
-         font-size: 20px;
-         font-weight: 700;
+        font-size: 20px;
+        font-weight: 700;
       }
     }
   }
@@ -209,8 +236,9 @@
   &__icon {
     width: 16px;
     height: 16px;
+    @include scale-on-hover;
 
-    @include sm {
+    @include lg {
       width: 25px;
       height: 25px;
     }
@@ -218,8 +246,5 @@
 }
 
 .cell-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  @include flex($justify: space-between, $align: center);
 }

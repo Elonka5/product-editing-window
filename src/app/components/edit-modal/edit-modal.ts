@@ -3,7 +3,6 @@ import {
   Component,
   EventEmitter,
   HostListener,
-  Input,
   OnInit,
   Output,
 } from '@angular/core';
@@ -16,6 +15,7 @@ import { Product } from '../../services/product';
 import { CommonModule } from '@angular/common';
 import { IProduct } from '../../models/product.model';
 import { Subscription } from 'rxjs';
+import { Button } from '../button/button';
 
 @Component({
   selector: 'app-edit-modal',
@@ -27,20 +27,18 @@ import { Subscription } from 'rxjs';
     EditModalLocationList,
     EditModalEbayListings,
     EditModalSimilarProducts,
+    Button,
   ],
   templateUrl: './edit-modal.html',
   styleUrl: './edit-modal.scss',
 })
 export class EditModal implements OnInit {
-  // @Input() onClose: () => void = () => {};
   @Output() close = new EventEmitter<void>();
-  // constructor(private productService: Product) {}
-
-  //   ngOnInit() {
-  //     this.productService.loadProduct();
-  //   }
 
   product: IProduct | null = null;
+  isLoading: boolean = true;
+  errorMessage: string = '';
+
   private subscription: Subscription | undefined;
 
   constructor(
@@ -49,21 +47,39 @@ export class EditModal implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.subscription = this.productService.product$.subscribe((data) => {
-      console.log('EditModal received:', data);
-      this.product = data;
-      this.cdr.detectChanges();
+    this.loadProductData();
+  }
+
+  loadProductData() {
+    this.isLoading = true;
+    this.product = null;
+    this.errorMessage = '';
+    this.subscription = this.productService.product$.subscribe({
+      next: (data) => {
+       setTimeout(() => {
+          this.product = data;
+          this.isLoading = false;
+          this.cdr.detectChanges();
+        }, 2000);
+      },
+      error: (error) => {
+        console.error('Error loading product:', error);
+        this.isLoading = false;
+        this.errorMessage = 'Ooops... something went wrong';
+        this.cdr.detectChanges();
+      }
     });
     this.productService.loadProduct();
+  }
+
+  retryLoad() {
+    this.loadProductData();
   }
 
   ngOnDestroy() {
     this.subscription?.unsubscribe();
   }
-
-  //   closeModal() {
-  //   this.onClose();
-  // }
+  
 
   onBackdropClick(event: MouseEvent) {
     this.close.emit();

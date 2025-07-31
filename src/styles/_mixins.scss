@@ -5,6 +5,14 @@
   @content;
 }
 
+@mixin scale-on-hover($scale: 1.1, $duration: 0.3s, $easing: ease-in-out) {
+  transition: transform $duration $easing;
+
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
 @mixin flex($justify: center, $align: center, $direction: row, $gap: 0) {
   display: flex;
   justify-content: $justify;
@@ -24,7 +32,11 @@
   font-size: 14px;
   font-weight: 700;
 
-  @include md {
+    @include md {
+    font-size: 18px;
+  }
+
+  @include lg {
     font-size: 25px;
   }
 }

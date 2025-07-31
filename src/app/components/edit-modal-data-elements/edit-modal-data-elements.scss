@@ -9,8 +9,8 @@
   &__container {
     @include grid($columns: repeat(1, 1fr));
 
-    @include md {
-      @include grid($columns: repeat(2, 1fr));
+    @include sm {
+      @include grid($columns: 1fr 1fr min-content);
     }
   }
 
@@ -23,6 +23,12 @@
     );
     padding-bottom: 20px;
     border-bottom: 1px solid var(--color-border-line);
+
+    @include sm {
+      border-bottom: none;
+      padding-right: 15px;
+      border-right: 1px solid var(--color-border-line);
+    }
 
     @include md {
       padding-bottom: 30px;
@@ -37,12 +43,27 @@
     padding: 5px 10px;
 
     @include md {
+      padding: 10px;
+    }
+
+    @include lg {
+      padding: 5px 35px 5px 20px;
+    }
+
+    @include xl {
       padding: 5px 55px 5px 20px;
     }
 
     &--p20 {
-      @include md {
+      @include lg {
         padding-right: 20px;
+      }
+    }
+
+    &--p-top-bottom {
+      @include lg {
+        padding-top: 7px;
+        padding-bottom: 7px;
       }
     }
   }
@@ -52,6 +73,10 @@
     font-style: normal;
 
     @include md {
+      font-size: 14px;
+    }
+
+    @include lg {
       font-size: 20px;
     }
   }
@@ -69,19 +94,45 @@
     text-transform: none;
 
     @include md {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    @include lg {
       font-size: 22px;
       font-weight: 600;
     }
 
     &--link {
       font-size: 8px;
+
+      @include md {
+        font-size: 10px;
+      }
+
+      @include lg {
+        font-size: 14px;
+      }
+
+      @include xl {
+        font-size: 18px;
+      }
     }
   }
 
-  &__button {
-    img {
-      width: 16px;
-      height: 16px;
+  &__button-icon {
+    width: 16px;
+    height: 16px;
+    @include scale-on-hover;
+
+    @include lg {
+      width: 20px;
+      height: 20px;
+    }
+
+    @include xl {
+      width: 25px;
+      height: 25px;
     }
   }
 
@@ -106,12 +157,20 @@
   &__image-caption {
     font-size: 16px;
 
+    @include sm {
+      font-size: 12px;
+    }
+
     @include md {
       font-size: 18px;
     }
   }
 
   &__image {
+    @include sm {
+      width: 115px;
+      height: 115px;
+    }
     @include md {
       width: 225px;
       height: 225px;

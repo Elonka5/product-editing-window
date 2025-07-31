@@ -1,27 +1,38 @@
-<!-- <div *ngIf="product; else loading" class="modal-content">
-  <app-edit-modal-header [product]="product" (closeModal)="onModalClose()"></app-edit-modal-header>
-  <app-edit-modal-data-elements></app-edit-modal-data-elements>
-  <app-edit-modal-location-list></app-edit-modal-location-list>
-  <app-edit-modal-ebay-listings></app-edit-modal-ebay-listings>
-  <app-edit-modal-similar-products></app-edit-modal-similar-products>
-</div>
-<ng-template #loading>
-  <p>Завантаження...</p>
-</ng-template> -->
-
-
-<div class="modal-overlay" (click)="onBackdropClick($event)">
+<div class="modal-overlay"  (click)="onBackdropClick($event)">
   <div class="modal-content" (click)="$event.stopPropagation()">
-    <ng-container *ngIf="product; else loading">
-      <app-edit-modal-header [product]="product" (closeModal)="onModalClose()"></app-edit-modal-header>
-      <app-edit-modal-data-elements [product]="product"></app-edit-modal-data-elements>
-      <app-edit-modal-location-list [product]="product"></app-edit-modal-location-list>
-      <app-edit-modal-ebay-listings [product]="product"></app-edit-modal-ebay-listings>
-      <app-edit-modal-similar-products [product]="product"></app-edit-modal-similar-products>
+    <ng-container *ngIf="product; else loadingOrError">
+      <app-edit-modal-header
+        [product]="product"
+        (closeModal)="onModalClose()"
+      ></app-edit-modal-header>
+      <app-edit-modal-data-elements
+        [product]="product"
+      ></app-edit-modal-data-elements>
+      <app-edit-modal-location-list
+        [product]="product"
+      ></app-edit-modal-location-list>
+      <app-edit-modal-ebay-listings
+        [product]="product"
+      ></app-edit-modal-ebay-listings>
+      <app-edit-modal-similar-products
+        [product]="product"
+      ></app-edit-modal-similar-products>
     </ng-container>
 
-    <ng-template #loading>
-      <p>Завантаження...</p>
+    <ng-template #loadingOrError>
+      <ng-container *ngIf="isLoading; else errorTemplate">
+        <div class="loader-container">
+          <div class="spinner"></div>
+          <p class="loader-text">Loading...</p>
+        </div>
+      </ng-container>
+
+      <ng-template #errorTemplate>
+        <div class="error-container">
+          <p class="error-message">{{ errorMessage }}</p>
+          <app-button (click)="retryLoad()" label="Retry"></app-button>
+        </div>
+      </ng-template>
     </ng-template>
   </div>
 </div>

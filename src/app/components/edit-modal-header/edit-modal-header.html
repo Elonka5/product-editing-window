@@ -4,22 +4,35 @@
       <h2 class="modal-header__title">{{ product?.id }}</h2>
       <app-button
         label="Edit"
-        type="primary"
         icon="assets/icons/note-edit.png"
+        [attr.aria-label]="'Edit product ' + (product?.id || '')"
       ></app-button>
     </div>
     <div class="modal-header__controls">
-      <button class="modal-header__control-btn">
-        <img src="assets/icons/arrow-prev.png" alt="Previous" />
+      <button
+        class="modal-header__control-btn"
+        [attr.aria-label]="'Go to previous product'"
+      >
+        <img src="assets/icons/arrow-prev.png" alt="Go to previous product" />
       </button>
-      <button class="modal-header__control-btn">
-        <img src="assets/icons/arrow-next.png" alt="Next" />
+      <button
+        class="modal-header__control-btn"
+        [attr.aria-label]="'Go to next product'"
+      >
+        <img src="assets/icons/arrow-next.png" alt="Go to next product" />
       </button>
-      <button class="modal-header__control-btn">
+      <button
+        class="modal-header__control-btn"
+        [attr.aria-label]="'Maximize modal window'"
+      >
         <img src="assets/icons/maximize.png" alt="Maximize" />
       </button>
-      <button (click)="onCloseClick()" class="modal-header__control-btn">
-        <img src="assets/icons/close.png" alt="Close" />
+      <button
+        (click)="onCloseClick()"
+        class="modal-header__control-btn"
+        [attr.aria-label]="'Close modal window'"
+      >
+        <img src="assets/icons/close.png" alt="Close modal window" />
       </button>
     </div>
   </div>

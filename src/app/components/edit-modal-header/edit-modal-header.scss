@@ -22,7 +22,7 @@
 }
 
 .modal-header__title {
-  @include heading-common
+  @include heading-common;
 }
 
 .modal-header__controls {
@@ -42,6 +42,7 @@
 .modal-header__control-btn {
   width: 16px;
   height: 16px;
+  @include scale-on-hover;
 
   @include md {
     width: 30px;

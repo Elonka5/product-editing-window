@@ -33,6 +33,7 @@
     &:hover,
     &:focus {
       background-color: var(--color-dark);
+      @include transition-standart;
     }
 
     @include md {
@@ -40,7 +41,7 @@
     }
   }
 
-  &.primary--wide{
+  &.primary--wide {
     @extend .primary;
     padding: 8px 20px 9px 21px;
   }
@@ -49,5 +50,12 @@
     color: var(--color-dark);
     border: 1px solid var(--color-accent);
     padding: 8px 15px 9px 15px;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-accent);
+      color: var(--color-white);
+      @include transition-standart;
+    }
   }
 }

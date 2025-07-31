@@ -1,145 +1,259 @@
-<section class="product-info">
+<section class="product-info" role="region" aria-label="Product Information">
   <div class="container">
-  <div class="product-info__container">
-    <div class="product-info__details">
-      <div class="product-info__item product-info__item--p20">
-        <p class="product-info__label">Brand</p>
-        <div class="product-info__value-wrapper">
-          <p class="product-info__value">{{ product?.brand }}</p>
-          <button class="product-info__button">
-            <img src="assets/icons/more.png" alt="Previous" />
-          </button>
+    <div class="product-info__container">
+      <dl class="product-info__details">
+        <!-- Brand -->
+        <div class="product-info__item product-info__item--p20">
+          <dt class="product-info__label">Brand</dt>
+          <dd class="product-info__value-wrapper">
+            <span class="product-info__value">{{ product?.brand }}</span>
+            <button
+              class="product-info__button"
+              aria-label="View more brand details"
+            >
+              <img
+                class="product-info__button-icon"
+                src="assets/icons/more.png"
+                alt="View more brand details"
+              />
+            </button>
+          </dd>
         </div>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Model/Series</p>
-        <p class="product-info__value">{{ product?.model_series}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Devise P/N</p>
-        <p class="product-info__value">{{ product?.device_pn}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Dev. Type</p>
-        <p class="product-info__value">{{ product?.dev_type}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label" >RNK</p>
-        <p class="product-info__value">{{ product?.rnk}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Min price</p>
-        <p class="product-info__value">{{ product?.min_price}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Max price</p>
-        <p class="product-info__value">{{ product?.max_price}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Quantity</p>
-        <p class="product-info__value">{{ product?.quantity}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">ePrq</p>
-        <p class="product-info__value">{{ product?.ePrq}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">eA4q</p>
-        <p class="product-info__value">{{ product?.eA4q}}</p>
-      </div>
-      <div class="product-info__item product-info__item--p20">
-        <p class="product-info__label">Photo_device</p>
-        <div class="product-info__value-wrapper">
-         <p class="product-info__value product-info__value--link">{{ product?.photo_device}}</p>
-          <button class="product-info__button">
-            <img src="assets/icons/link.png" alt="Previous" />
-          </button>
+        <!-- Model/Series -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Model/Series</dt>
+          <dd class="product-info__value">{{ product?.model_series }}</dd>
         </div>
+        <!-- Device P/N -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Device P/N</dt>
+          <dd class="product-info__value">{{ product?.device_pn }}</dd>
+        </div>
+        <!-- Dev. Type -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Device Type</dt>
+          <dd class="product-info__value">{{ product?.dev_type }}</dd>
+        </div>
+        <!-- RNK -->
+        <div class="product-info__item">
+          <dt class="product-info__label">RNK</dt>
+          <dd class="product-info__value">{{ product?.rnk }}</dd>
+        </div>
+        <!-- Min price -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Min price</dt>
+          <dd class="product-info__value">{{ product?.min_price }}</dd>
+        </div>
+        <!-- Max price -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Max price</dt>
+          <dd class="product-info__value">{{ product?.max_price }}</dd>
+        </div>
+        <!-- Quantity -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Quantity</dt>
+          <dd class="product-info__value">{{ product?.quantity }}</dd>
+        </div>
+        <!-- ePrq -->
+        <div class="product-info__item">
+          <dt class="product-info__label">ePrq</dt>
+          <dd class="product-info__value">{{ product?.ePrq }}</dd>
+        </div>
+        <!-- eA4q -->
+        <div class="product-info__item">
+          <dt class="product-info__label">eA4q</dt>
+          <dd class="product-info__value">{{ product?.eA4q }}</dd>
+        </div>
+        <!-- Photo_device -->
+        <div class="product-info__item product-info__item--p20 product-info__item--p-top-bottom">
+          <dt class="product-info__label">Photo device</dt>
+          <dd class="product-info__value-wrapper">
+            <a
+              class="product-info__value product-info__value--link"
+              [href]="product?.photo_device"
+              target="_blank"
+              rel="noopener noreferrer"
+              *ngIf="product?.photo_device"
+            >
+              {{ product?.photo_device }}
+            </a>
+            <a
+              class="product-info__button"
+              [href]="product?.photo_device"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open photo device link"
+              *ngIf="product?.photo_device"
+            >
+              <img
+                class="product-info__button-icon"
+                src="assets/icons/link.png"
+                alt="Open photo device link"
+              />
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <dl class="product-info__details">
+        <!-- Sku -->
+        <div class="product-info__item product-info__item--p20 ">
+          <dt class="product-info__label">Sku</dt>
+          <dd class="product-info__value-wrapper">
+            <span class="product-info__value">{{ product?.sku }}</span>
+            <button
+              class="product-info__button"
+              aria-label="View more SKU details"
+            >
+              <img
+                class="product-info__button-icon"
+                src="assets/icons/more.png"
+                alt="View more SKU details"
+              />
+            </button>
+          </dd>
+        </div>
+        <!-- L-User -->
+        <div class="product-info__item product-info__item--p20">
+          <dt class="product-info__label">L-User</dt>
+          <dd class="product-info__value-wrapper">
+            <span class="product-info__value">{{ product?.l_user }}</span>
+            <button
+              class="product-info__button"
+              aria-label="View more L-User details"
+            >
+              <img
+                class="product-info__button-icon"
+                src="assets/icons/more.png"
+                alt="View more L-User details"
+              />
+            </button>
+          </dd>
+        </div>
+        <!-- Category -->
+        <div class="product-info__item product-info__item--p20">
+          <dt class="product-info__label">Category</dt>
+          <dd class="product-info__value-wrapper">
+            <span class="product-info__value">{{ product?.category }}</span>
+            <button
+              class="product-info__button"
+              aria-label="View more category details"
+            >
+              <img
+                class="product-info__button-icon"
+                src="assets/icons/more.png"
+                alt="View more category details"
+              />
+            </button>
+          </dd>
+        </div>
+        <!-- E-User -->
+        <div class="product-info__item product-info__item--p20">
+          <dt class="product-info__label">E-User</dt>
+          <dd class="product-info__value-wrapper">
+            <span class="product-info__value">{{ product?.e_user }}</span>
+            <button
+              class="product-info__button"
+              aria-label="View more E-User details"
+            >
+              <img
+                class="product-info__button-icon"
+                src="assets/icons/more.png"
+                alt="View more E-User details"
+              />
+            </button>
+          </dd>
+        </div>
+        <!-- Green_id -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Green ID</dt>
+          <dd class="product-info__value">{{ product?.green_id }}</dd>
+        </div>
+        <!-- Edit_at -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Edited at</dt>
+          <dd class="product-info__value">{{ product?.edit_at }}</dd>
+        </div>
+        <!-- Create_at -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Created at</dt>
+          <dd class="product-info__value">{{ product?.create_at }}</dd>
+        </div>
+        <!-- Amazon listing src -->
+        <div class="product-info__item product-info__item--p20 product-info__item--p-top-bottom">
+          <dt class="product-info__label">Amazon listing src</dt>
+          <dd class="product-info__value-wrapper">
+            <a
+              class="product-info__value product-info__value--link"
+              [href]="product?.amazon_listing_src"
+              target="_blank"
+              rel="noopener noreferrer"
+              *ngIf="product?.amazon_listing_src"
+            >
+              {{ product?.amazon_listing_src }}
+            </a>
+            <a
+              class="product-info__button"
+              [href]="product?.amazon_listing_src"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Amazon listing link"
+              *ngIf="product?.amazon_listing_src"
+            >
+              <img
+                class="product-info__button-icon"
+                src="assets/icons/link.png"
+                alt="Open Amazon listing link"
+              />
+            </a>
+          </dd>
+        </div>
+        <!-- eLCCq -->
+        <div class="product-info__item">
+          <dt class="product-info__label">eLCCq</dt>
+          <dd class="product-info__value">{{ product?.elCcq }}</dd>
+        </div>
+        <!-- Amazq -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Amazq</dt>
+          <dd class="product-info__value">{{ product?.amazq }}</dd>
+        </div>
+        <!-- Notes -->
+        <div class="product-info__item">
+          <dt class="product-info__label">Notes</dt>
+          <dd class="product-info__value">{{ product?.notes }}</dd>
+        </div>
+      </dl>
+      <!-- Gallery -->
+      <div class="product-info__gallery">
+        <figure class="product-info__image-wrapper">
+          <figcaption class="product-info__image-caption">
+            Photo device
+          </figcaption>
+          <img
+            class="product-info__image"
+            src="assets/images/first-img@1x.png"
+            srcset="
+              assets/images/first-img@1x.png 1x,
+              assets/images/first-img@2x.png 2x
+            "
+            alt="Photo of the device"
+          />
+        </figure>
+        <figure class="product-info__image-wrapper">
+          <figcaption class="product-info__image-caption">
+            Photo data plate
+          </figcaption>
+          <img
+            class="product-info__image"
+            src="assets/images/second-img@1x.png"
+            srcset="
+              assets/images/second-img@1x.png 1x,
+              assets/images/second-img@2x.png 2x
+            "
+            alt="Photo of the data plate"
+          />
+        </figure>
       </div>
     </div>
-        <div class="product-info__details">
-      <div class="product-info__item product-info__item--p20">
-        <p class="product-info__label">Sku</p>
-        <div class="product-info__value-wrapper">
-          <p class="product-info__value">{{ product?.sku }}</p>
-          <button class="product-info__button">
-            <img src="assets/icons/more.png" alt="Previous" />
-          </button>
-        </div>
-      </div>
-      <div class="product-info__item product-info__item--p20">
-        <p class="product-info__label">L-User</p>
-       <div class="product-info__value-wrapper">
-          <p class="product-info__value">{{ product?.l_user }}</p>
-          <button class="product-info__button">
-            <img src="assets/icons/more.png" alt="Previous" />
-          </button>
-        </div>
-      </div>
-      <div class="product-info__item product-info__item--p20">
-        <p class="product-info__label">Category</p>
-        <div class="product-info__value-wrapper">
-          <p class="product-info__value">{{ product?.category }}</p>
-          <button class="product-info__button">
-            <img src="assets/icons/more.png" alt="Previous" />
-          </button>
-        </div>
-      </div>
-      <div class="product-info__item product-info__item--p20">
-        <p class="product-info__label">E-User</p>
-        <div class="product-info__value-wrapper">
-          <p class="product-info__value">{{ product?.e_user }}</p>
-          <button class="product-info__button">
-            <img src="assets/icons/more.png" alt="Previous" />
-          </button>
-        </div>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Green_id</p>
-          <p class="product-info__value">{{ product?.green_id }}</p>  
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Edit_at</p>
-        <p class="product-info__value">{{ product?.edit_at}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Create_at</p>
-        <p class="product-info__value">{{ product?.create_at}}</p>
-      </div>
-      <div class="product-info__item product-info__item--p20">
-        <p class="product-info__label">Amazon listing src</p>
-       <div class="product-info__value-wrapper">
-          <p class="product-info__value product-info__value--link">{{ product?.amazon_listing_src }}</p>
-          <button class="product-info__button">
-            <img src="assets/icons/link.png" alt="Previous" />
-          </button>
-        </div>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">eLCCq</p>
-        <p class="product-info__value">{{ product?.elCcq}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Amazq</p>
-        <p class="product-info__value">{{ product?.amazq}}</p>
-      </div>
-      <div class="product-info__item">
-        <p class="product-info__label">Notes</p>
-         <p class="product-info__value">{{ product?.notes}}</p>
-      </div>
-    </div>
-    <div class="product-info__gallery">
-        <div class="product-info__image-wrapper">
-            <p class="product-info__image-caption">Photo_device</p>
-             <img class="product-info__image" src="assets/images/first-img@1x.png"
-             srcset="assets/images/first-img@1x.png 1x, assets/images/first-img@2x.png 2x"
-              alt="Photo-device" />
-        </div>
-        <div class="product-info__image-wrapper">
-            <p class="product-info__image-caption">Photo_data_plate</p>
-            <img class="product-info__image" src="assets/images/second-img@1x.png"
-            srcset="assets/images/second-img@1x.png 1x, assets/images/second-img@2x.png 2x" alt="Photo_data_plate" />
-        </div>
-    </div>
-  </div></div>
+  </div>
 </section>
