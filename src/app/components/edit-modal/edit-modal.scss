@@ -1,3 +1,5 @@
+@use "../../../styles/responsive" as *;
+
 .modal-content{
     position: absolute;
     top: 50%;
@@ -8,4 +10,8 @@
     background-color: var(--color-white);
     border-radius: 10px;
     overflow-y: auto;
+
+    @include lg {
+      width: 100vw;   
+    }
 }

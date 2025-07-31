@@ -35,6 +35,7 @@
 
   &__table {
     width: 100%;
+    // max-width: 1500px;
     border-collapse: collapse;
     padding: 0 10px;
     white-space: nowrap;
@@ -87,9 +88,9 @@
 
   &__row {
     margin-bottom: 14px;
+    padding: 10px;
     border: 1px solid var(--color-border-secondary);
     border-radius: 5px;
-    padding: 10px;
 
     @include sm {
       border-top: 1px solid var(--color-border-secondary);
@@ -105,14 +106,15 @@
 
     &:last-child {
       border-right: none;
-      width: 100%;
+      min-width: 400px;
+      max-width: 402px;
+      //   width: 100%;
     }
   }
 
   &__header-cell,
   &__cell {
     padding: 11px 20px;
-
     text-align: left;
   }
 
@@ -123,7 +125,51 @@
     }
 
     @include lg {
+      min-width: 135px;
       padding-left: 30px;
+    }
+  }
+
+  &__header-cell:nth-child(2),
+  &__cell:nth-child(2) {
+    @include lg {
+      min-width: 163px;
+    }
+  }
+
+  &__header-cell:nth-child(3),
+  &__header-cell:nth-child(4),
+  &__header-cell:nth-child(6),
+  &__cell:nth-child(3),
+  &__cell:nth-child(4),
+  &__cell:nth-child(6) {
+    @include lg {
+      min-width: 172px;
+    }
+  }
+
+  &__header-cell:nth-child(5),
+  &__cell:nth-child(5) {
+    @include lg {
+      min-width: 97px;
+    }
+  }
+
+  &__header-cell:nth-child(7),
+  &__cell:nth-child(7) {
+    @include lg {
+      min-width: 156px;
+    }
+  }
+
+  &__header-cell:last-child,
+  &__cell:last-child {
+    @include sm {
+      padding-right: 20px;
+    }
+
+    @include lg {
+      padding-right: 30px;
     }
   }
 

@@ -1,0 +1,73 @@
+@use "../../../styles/common-tables" as *;
+@use "../../../styles/responsive" as *;
+
+.product-table--variant-2 {
+  .product-table__header-cell:first-child,
+  .product-table__cell:first-child {
+    @include lg {
+      //   min-width: 196px;
+      min-width: 184px;
+    }
+  }
+
+  .product-table__header-cell:nth-child(2),
+  .product-table__cell:nth-child(2) {
+    @include lg {
+      //   min-width: 228px;
+      min-width: 218px;
+    }
+  }
+
+  .product-table__header-cell:nth-child(3),
+  .product-table__cell:nth-child(3) {
+    @include lg {
+      min-width: 173px;
+    }
+  }
+  .product-table__header-cell:nth-child(4),
+  .product-table__cell:nth-child(4) {
+    @include lg {
+      min-width: 155px;
+    }
+  }
+  .product-table__header-cell:nth-child(5),
+  .product-table__cell:nth-child(5) {
+    @include lg {
+      min-width: 353px;
+    }
+  }
+  .product-table__header-cell:nth-child(6),
+  .product-table__cell:nth-child(6) {
+    @include lg {
+      min-width: 94px;
+    }
+  }
+  .product-table__header-cell:nth-child(7),
+  .product-table__cell:nth-child(7) {
+    @include lg {
+      min-width: 156px;
+    }
+  }
+
+  .product-table__header-cell:last-child,
+  .product-table__cell:last-child {
+    @include lg {
+      min-width: 132px;
+    }
+  }
+
+  .product-table__count {
+    padding: 3px 4px 4px 4px;
+  }
+
+  .product-table__header-cell:last-child,
+  .product-table__cell:last-child {
+    @include sm {
+      padding-right: 20px;
+    }
+
+    @include lg {
+      padding-right: 28px;
+    }
+  }
+}

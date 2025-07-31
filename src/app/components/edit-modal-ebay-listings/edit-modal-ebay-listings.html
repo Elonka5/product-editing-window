@@ -1,1 +1,29 @@
-<p>edit-modal-ebay-listings works!</p>
+
+<section class="product-table product-table--variant-2">
+  <div class="container">
+    <div class="product-table__title-wrapper">
+      <h2 class="product-table__title">List ebay vision listings</h2>
+      <span class="product-table__count">53</span>
+    </div>
+  </div>
+  <table class="product-table__table">
+    <thead class="product-table__head">
+      <tr class="product-table__row">
+        <th class="product-table__header-cell" *ngFor="let col of columns">
+          {{ col.label }}
+        </th>
+      </tr>
+    </thead>
+    <tbody class="product-table__body" *ngFor="let i of [0, 1, 2, 3]">
+      <tr *ngFor="let row of product?.ebay_listings" class="product-table__row">
+        <td
+          *ngFor="let col of columns; let i = index"
+          class="product-table__cell"
+          [attr.data-label]="col.label"
+        >{{ row[col.key] }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
